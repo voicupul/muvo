@@ -59,7 +59,14 @@ Route::group(['prefix' => 'admin'], function () {
     ]);
 });
 
-Route::get('db',[
-    'uses'=>'DataController@getDatabases',
-    'as'=>'db.index'
+Route::get('db', [
+    'uses' => 'DataController@getDatabases',
+    'as' => 'db.index'
 ]);
+
+Route::get('test', function(){
+    return view('test.message');
+});
+
+Route::get('/invoke', 'TestController@invoke');
+
